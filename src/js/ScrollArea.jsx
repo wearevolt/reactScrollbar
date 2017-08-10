@@ -274,7 +274,11 @@ export default class ScrollArea extends React.Component {
 
     handleKeyDown(e) {
         // only handle if scroll area is in focus
-        if (e.target.tagName.toLowerCase() !== 'input') {
+        const { target } = e;
+        const { isContentEditable } = target;
+        const tagName = target.tagName.toLowerCase();
+
+        if (tagName !== 'input' && tabName !== 'textarea' && !isContentEditable) {
             let deltaY = 0;
             let deltaX = 0;
             let lineHeight = this.lineHeightPx ? this.lineHeightPx : 10;
