@@ -278,7 +278,7 @@ export default class ScrollArea extends React.Component {
         const { isContentEditable } = target;
         const tagName = target.tagName.toLowerCase();
 
-        if (tagName !== 'input' && tabName !== 'textarea' && !isContentEditable) {
+        if (tagName !== 'input' && tagName !== 'textarea' && !isContentEditable) {
             let deltaY = 0;
             let deltaX = 0;
             let lineHeight = this.lineHeightPx ? this.lineHeightPx : 10;
